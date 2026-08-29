@@ -1,0 +1,169 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+---
+
+<BaseLayout
+  title="Apply · Bow Tie Kreative"
+  description="Start your Growth Application with Bow Tie Kreative. Tell us about your business and goals."
+  canonical="https://bowtiekreative.com/apply"
+  noindex={true}
+>
+  <section class="rp-section rp-backlight">
+    <div class="rp-container">
+      <div class="rp-apply">
+        <div class="rp-apply-text rp-fade-in">
+          <span class="rp-eyebrow">Apply</span>
+          <h1>Growth Application</h1>
+          <p>Tell us about your business, your current growth constraint, and your investment range. We'll review and invite you to a Growth Allocation Call if Bow Tie is a fit.</p>
+          <p>Approximately 5 minutes · No obligation · Reviewed by a real person</p>
+        </div>
+
+        <form class="rp-form rp-fade-in stagger-2" action="https://app.emailit.com/nqkjevmvqi" method="POST" id="growth-form">
+          <input type="hidden" name="form_id" value="growth-application" />
+          <input type="hidden" name="redirect_url" value="https://bowtiekreative.com/thank-you" />
+          <input type="hidden" name="test_email" value="ryan+test@bowtiekreative.com" />
+
+          <div class="rp-form-group">
+            <label for="full_name">Full Name *</label>
+            <input type="text" id="full_name" name="full_name" required placeholder="Your full name" />
+          </div>
+
+          <div class="rp-form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="you@company.com" />
+          </div>
+
+          <div class="rp-form-group">
+            <label for="company">Company Name *</label>
+            <input type="text" id="company" name="company" required placeholder="Your company" />
+          </div>
+
+          <div class="rp-form-group">
+            <label for="website">Website URL</label>
+            <input type="url" id="website" name="website" placeholder="https://yourcompany.com" />
+          </div>
+
+          <div class="rp-form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (403) 555-0123" />
+          </div>
+
+          <div class="rp-form-group">
+            <label for="budget">Monthly Investment Range *</label>
+            <select id="budget" name="budget" required>
+              <option value="">Select a range...</option>
+              <option value="2500-5000">$2,500 – $5,000 / month</option>
+              <option value="5000-10000">$5,000 – $10,000 / month</option>
+              <option value="10000-20000">$10,000 – $20,000 / month</option>
+              <option value="20000+">$20,000+ / month</option>
+              <option value="not-sure">Not sure yet</option>
+            </select>
+          </div>
+
+          <div class="rp-form-group">
+            <label for="constraint">What is your current growth constraint? *</label>
+            <textarea id="constraint" name="constraint" rows="4" required placeholder="Tell us about the biggest challenge holding your business back right now..."></textarea>
+          </div>
+
+          <div class="rp-form-group">
+            <label for="goals">What are your top 3 growth goals for the next 6 months?</label>
+            <textarea id="goals" name="goals" rows="3" placeholder="e.g. increase leads by 50%, launch new service line, improve conversion rate"></textarea>
+          </div>
+
+          <div class="rp-form-group">
+            <label for="referral">How did you hear about us?</label>
+            <input type="text" id="referral" name="referral" placeholder="Google, referral, podcast, etc." />
+          </div>
+
+          <div class="rp-form-checkbox">
+            <input type="checkbox" id="consent" name="consent" required />
+            <label for="consent">I agree to the <a href="/privacy-policy">Privacy Policy</a> and <a href="/terms">Terms of Service</a> *</label>
+          </div>
+
+          <Button variant="primary" size="lg" type="submit">Submit Application</Button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .rp-apply {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .rp-apply-text h1 {
+    margin-bottom: var(--space-4);
+  }
+  .rp-apply-text p {
+    color: var(--text-muted);
+    font-size: var(--text-body-lg);
+    margin-bottom: var(--space-3);
+  }
+  .rp-form {
+    margin-top: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+  .rp-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .rp-form-group label {
+    font-size: var(--text-small);
+    font-weight: var(--weight-semibold);
+    color: var(--text-heading);
+  }
+  .rp-form-group input,
+  .rp-form-group select,
+  .rp-form-group textarea {
+    font-family: var(--font-core);
+    font-size: var(--size-body);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-input);
+    border: 1px solid var(--hairline);
+    background: var(--rp-surface);
+    color: var(--text-heading);
+    outline: none;
+    transition: border-color var(--duration-fast) var(--ease-out);
+  }
+  .rp-form-group input:focus,
+  .rp-form-group select:focus,
+  .rp-form-group textarea:focus {
+    border-color: var(--rp-accent);
+    box-shadow: 0 0 0 2px rgba(63, 110, 233, 0.2);
+  }
+  .rp-form-group input::placeholder,
+  .rp-form-group textarea::placeholder {
+    color: var(--text-muted);
+  }
+  .rp-form-group select {
+    cursor: pointer;
+  }
+  .rp-form-group select option {
+    background: var(--rp-surface-2);
+    color: var(--text-heading);
+  }
+  .rp-form-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+  .rp-form-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--rp-accent);
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+  .rp-form-checkbox label {
+    font-size: var(--text-small);
+    color: var(--text-muted);
+  }
+  .rp-form-checkbox a {
+    color: var(--text-link);
+  }
+</style>

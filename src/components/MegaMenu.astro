@@ -1,0 +1,322 @@
+---
+// MegaMenu — Ryan Perez Design System
+// Frosted glass nav with hover-drop panels or overlay behaviour
+export interface Props {
+  brand?: string;
+  items?: Array<{
+    label: string;
+    href?: string;
+    sections?: Array<{ title: string; links: Array<{ label: string; href: string; meta?: string }> }>;
+    feature?: { kicker?: string; title: string; href: string; src?: string };
+  }>;
+  cta?: string;
+  ctaHref?: string;
+}
+
+const { brand = 'Bow Tie Kreative', items = [], cta, ctaHref } = Astro.props;
+---
+
+<div class="rp-megamenu" data-open="">
+  <header class="mm-header">
+    <div class="mm-inner">
+      <a href="/" class="mm-brand">↤ {brand}</a>
+      <nav class="mm-nav">
+        {items.map((item, i) => (
+          item.sections || item.feature ? (
+            <button class="mm-trigger" data-index={i} type="button">
+              {item.label}
+              <svg width="8" height="6" viewBox="0 0 8 6" fill="none" class="mm-chevron">
+                <path d="M1 1.5L4 4.5L7 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          ) : (
+            <a href={item.href || '#'} class="mm-trigger">{item.label}</a>
+          )
+        ))}
+        {cta && ctaHref && (
+          <a href={ctaHref} class="mm-cta">{cta} →</a>
+        )}
+      </nav>
+      <button class="mm-mobile-toggle" type="button" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  {items.filter(it => it.sections || it.feature).map((item, i) => (
+    <div class="mm-panel" data-panel={i}>
+      <div class="mm-panel-inner">
+        {item.sections && item.sections.map((sec) => (
+          <div class="mm-col">
+            <div class="mm-col-title">{sec.title}</div>
+            {sec.links.map((link) => (
+              <a href={link.href} class="mm-link">
+                <span>{link.label}</span>
+                {link.meta && <span class="mm-link-meta">{link.meta}</span>}
+              </a>
+            ))}
+          </div>
+        ))}
+        {item.feature && (
+          <a href={item.feature.href} class="mm-feature">
+            {item.feature.src && <img src={item.feature.src} alt="" class="mm-feature-img" />}
+            <div class="mm-feature-bottom">
+              {item.feature.kicker && <div class="mm-feature-kicker">{item.feature.kicker}</div>}
+              <div class="mm-feature-title">{item.feature.title}</div>
+            </div>
+            <div class="mm-feature-arrow">↗</div>
+          </a>
+        )}
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .rp-megamenu {
+    position: relative;
+    font-family: var(--font-core);
+    z-index: 100;
+  }
+  .mm-header {
+    position: relative;
+    z-index: 2;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+  .mm-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mm-brand {
+    font-weight: var(--weight-semibold);
+    letter-spacing: -0.03em;
+    font-size: 18px;
+    color: var(--text-heading);
+    text-decoration: none;
+  }
+  .mm-nav {
+    display: flex;
+    gap: var(--space-6);
+    align-items: center;
+  }
+  .mm-trigger {
+    background: none;
+    border: none;
+    padding: 26px 0;
+    cursor: pointer;
+    font-family: var(--font-core);
+    font-size: var(--text-micro);
+    letter-spacing: var(--track-micro);
+    text-transform: uppercase;
+    color: var(--text-body);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+  }
+  .mm-trigger:hover {
+    color: var(--text-heading);
+  }
+  .mm-trigger[data-active] {
+    color: var(--text-heading);
+    box-shadow: inset 0 -2px 0 var(--rp-accent);
+  }
+  .mm-chevron {
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+  .mm-trigger[data-active] .mm-chevron {
+    transform: rotate(180deg);
+  }
+  .mm-cta {
+    padding: 10px 20px;
+    border-radius: var(--radius-btn);
+    background: var(--cta);
+    color: var(--rp-on-accent);
+    font-family: var(--font-core);
+    font-size: var(--text-small);
+    font-weight: var(--weight-semibold);
+    text-decoration: none;
+    transition: background var(--duration-fast) var(--ease-out);
+  }
+  .mm-cta:hover {
+    background: var(--rp-accent-hover);
+    color: var(--rp-on-accent);
+  }
+  .mm-mobile-toggle {
+    display: none;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .mm-mobile-toggle span {
+    display: block;
+    width: 16px;
+    height: 1.5px;
+    background: var(--text-heading);
+    transition: transform var(--duration-base) var(--ease-out);
+  }
+  .mm-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .mm-panel[data-active] {
+    pointer-events: auto;
+  }
+  .mm-panel-inner {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--hairline);
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: var(--space-7) var(--gutter) 56px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gutter);
+    transform: translateY(-100%);
+    transition: transform var(--duration-base) var(--ease-out);
+  }
+  .mm-panel[data-active] .mm-panel-inner {
+    transform: translateY(0);
+  }
+  .mm-col {
+    grid-column: span 3;
+  }
+  .mm-col-title {
+    font-size: var(--text-micro);
+    letter-spacing: var(--track-micro);
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+  .mm-link {
+    display: block;
+    text-decoration: none;
+    padding: 10px 0;
+    transition: opacity var(--duration-fast) var(--ease-out);
+  }
+  .mm-link span {
+    font-size: var(--text-h4);
+    font-weight: var(--weight-semibold);
+    letter-spacing: var(--track-h4);
+    color: var(--text-heading);
+    display: block;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+  .mm-link:hover span {
+    color: var(--text-link);
+  }
+  .mm-link-meta {
+    display: block;
+    margin-top: 2px;
+    font-size: var(--text-small);
+    color: var(--text-muted);
+  }
+  .mm-feature {
+    grid-column: 9 / 13;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--rp-surface-2), var(--rp-surface));
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .mm-feature-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: var(--grade-filter);
+  }
+  .mm-feature-bottom {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 18px;
+  }
+  .mm-feature-kicker {
+    font-size: var(--text-micro);
+    letter-spacing: var(--track-micro);
+    text-transform: uppercase;
+    color: rgba(245, 247, 250, 0.7);
+    margin-bottom: 6px;
+  }
+  .mm-feature-title {
+    font-size: 20px;
+    font-weight: var(--weight-semibold);
+    letter-spacing: -0.02em;
+    color: var(--text-heading);
+  }
+  .mm-feature-arrow {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--cta);
+    color: var(--rp-on-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .mm-nav { display: none; }
+    .mm-mobile-toggle { display: flex; }
+    .mm-panel-inner {
+      grid-template-columns: 1fr;
+      padding: var(--space-5) var(--gutter);
+    }
+    .mm-col { grid-column: 1; }
+    .mm-feature { grid-column: 1; }
+  }
+</style>
+
+<script>
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('.mm-trigger');
+    const panel = e.target.closest('.mm-panel');
+    const megamenu = document.querySelector('.rp-megamenu');
+
+    if (!megamenu) return;
+
+    // Close all panels
+    document.querySelectorAll('.mm-trigger').forEach(t => t.removeAttribute('data-active'));
+    document.querySelectorAll('.mm-panel').forEach(p => p.removeAttribute('data-active'));
+
+    if (trigger && (trigger.dataset.index !== undefined)) {
+      const idx = trigger.dataset.index;
+      trigger.setAttribute('data-active', '');
+      const panel = megamenu.querySelector(`.mm-panel[data-panel="${idx}"]`);
+      if (panel) panel.setAttribute('data-active', '');
+    }
+  });
+</script>

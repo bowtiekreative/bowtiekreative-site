@@ -1,0 +1,503 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+---
+
+<BaseLayout
+  title="Adaptive Growth Agency · Bow Tie Kreative"
+  description="Bow Tie Kreative gives established businesses one flexible point-based system for strategy, creative, funnels, content, automation and AI."
+  canonical="https://bowtiekreative.com"
+>
+  <!-- Hero -->
+  <section class="rp-hero rp-backlight">
+    <div class="rp-container">
+      <div class="rp-hero-grid">
+        <div class="rp-hero-text rp-fade-in">
+          <span class="rp-eyebrow">The adaptive growth agency</span>
+          <h1>Put your growth budget where it works hardest.</h1>
+          <p class="rp-hero-sub">Your priorities can change overnight. Your agency should be able to change with them. Bow Tie Kreative gives established businesses one flexible point-based system for strategy, creative, funnels, content, automation and AI — so the next dollar funds the next best growth move.</p>
+          <div class="rp-hero-actions">
+            <Button variant="primary" size="lg" href="/apply">Find your best next move</Button>
+            <Button variant="secondary" size="lg" href="/growth-points">Explore GrowthPoints</Button>
+          </div>
+          <div class="rp-hero-stats">
+            <div><strong>13</strong> <span>Disciplines</span></div>
+            <div><strong>25–110</strong> <span>Points / month</span></div>
+            <div><strong>114</strong> <span>Published task values</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem section -->
+  <section class="rp-section rp-backlight">
+    <div class="rp-container">
+      <div class="rp-problem">
+        <span class="rp-eyebrow">The old agency model breaks</span>
+        <h2>You shouldn't have to choose between a rigid retainer and a pile of freelancers.</h2>
+        <p>Traditional agencies lock your budget inside a scope. Specialists focus on their channel. Freelancers wait for you to tell them what to build. Meanwhile, the real constraint moves.</p>
+        <div class="rp-constraints">
+          <div class="rp-constraint-card">
+            <h3>Fixed scopes</h3>
+            <p>You keep paying for last quarter's priorities.</p>
+          </div>
+          <div class="rp-constraint-card">
+            <h3>Disconnected specialists</h3>
+            <p>Every vendor improves a piece, but nobody owns the whole path.</p>
+          </div>
+          <div class="rp-constraint-card">
+            <h3>Invisible tradeoffs</h3>
+            <p>You see invoices and deliverables, but not why one initiative deserves funding before another.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution section -->
+  <section class="rp-section" style="background: var(--rp-surface);">
+    <div class="rp-container">
+      <div class="rp-solution">
+        <span class="rp-eyebrow">Introducing adaptive growth</span>
+        <h2>One budget. Every capability. Change direction when the evidence changes.</h2>
+        <p>GrowthPoints convert your monthly investment into visible growth capacity. Use the same points across twelve execution disciplines plus strategy, then reorder the queue as the business learns.</p>
+        <p>You don't buy random tasks. We help you identify the constraint, rank the opportunities, and allocate your points to the work most likely to move the business forward.</p>
+        <Button variant="ghost" size="md" href="/growth-points">See the GrowthPoints system</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="rp-section">
+    <div class="rp-container">
+      <span class="rp-eyebrow">How it works</span>
+      <h2 class="rp-section-title">Four moves, repeated.</h2>
+      <div class="rp-steps">
+        <div class="rp-step rp-fade-in stagger-1">
+          <span class="rp-eyebrow">Step 01</span>
+          <h3>Find the constraint</h3>
+          <p>We clarify the business outcome, inspect the customer journey, and identify what is slowing growth now.</p>
+        </div>
+        <div class="rp-step rp-fade-in stagger-2">
+          <span class="rp-eyebrow">Step 02</span>
+          <h3>Rank the opportunities</h3>
+          <p>We compare potential actions by impact, confidence, speed to evidence, and point cost.</p>
+        </div>
+        <div class="rp-step rp-fade-in stagger-3">
+          <span class="rp-eyebrow">Step 03</span>
+          <h3>Deploy GrowthPoints</h3>
+          <p>Your points fund the selected strategy, creative, campaign, funnel, AI, or automation work.</p>
+        </div>
+        <div class="rp-step rp-fade-in stagger-4">
+          <span class="rp-eyebrow">Step 04</span>
+          <h3>Reallocate as you learn</h3>
+          <p>If the evidence changes before work begins, change the queue. Your budget stays predictable while your priorities remain flexible.</p>
+        </div>
+      </div>
+      <div class="rp-step-cta">
+        <Button variant="primary" size="lg" href="/apply">Apply for a Growth Allocation Call</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disciplines -->
+  <section class="rp-section" style="background: var(--rp-surface);">
+    <div class="rp-container">
+      <span class="rp-eyebrow">One connected growth team</span>
+      <h2 class="rp-section-title">Stop coordinating the people who are supposed to help you grow.</h2>
+      <p>Use one system across every discipline below. The work changes. The operating relationship does not.</p>
+      <div class="rp-disciplines">
+        {['Strategy and planning', 'Design and creative', 'Content marketing', 'Social media', 'Video editing', 'Motion graphics', 'SEO', 'Paid ads', 'Email marketing', 'Web and landing pages', 'Analytics and reporting', 'AI tasks', 'Automation tasks'].map((d, i) => (
+          <div class="rp-discipline rp-fade-in" class:list={{ [`stagger-${(i % 6) + 1}`]: true }}>
+            <span>→</span> {d}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison table -->
+  <section class="rp-section">
+    <div class="rp-container">
+      <span class="rp-eyebrow">Where the difference shows</span>
+      <h2 class="rp-section-title">Four ways to buy marketing.</h2>
+      <div class="rp-table-wrap">
+        <table class="rp-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Traditional retainer</th>
+              <th>Unlimited subscription</th>
+              <th>Multiple freelancers</th>
+              <th class="rp-table-accent">Bow Tie GrowthPoints</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Budget', 'Fixed', 'Fixed', 'Variable', 'Predictable'],
+              ['Scope', 'Rigid', 'Broad but throughput-limited', 'Fragmented', 'Flexible point allocation'],
+              ['Strategy', 'Often separate', 'Usually limited', 'Client-owned', 'Built into prioritization'],
+              ['Capabilities', 'Contract-dependent', 'Narrow', 'Vendor-dependent', 'Cross-disciplinary'],
+              ['Priority changes', 'Change order', 'Queue swap', 'Re-coordinate vendors', 'Reorder before work starts'],
+              ['Visibility', 'Hours or deliverables', 'Requests', 'Separate invoices', 'Clear task values and slots'],
+            ].map(([label, ...cells]) => (
+              <tr>
+                <th>{label}</th>
+                {cells.map((c, ci) => <td class:list={{ 'rp-table-accent': ci === 3 }}>{c}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing section -->
+  <section class="rp-section" style="background: var(--rp-surface);">
+    <div class="rp-container">
+      <span class="rp-eyebrow">Capacity that fits</span>
+      <h2 class="rp-section-title">Start with the capacity you need. Add more when the opportunity earns it.</h2>
+      <div class="rp-pricing-grid">
+        <div class="rp-pricing-card rp-fade-in stagger-1">
+          <h3>Starter Growth</h3>
+          <div class="rp-pricing-points">25 <span>GrowthPoints / month</span></div>
+          <div class="rp-pricing-slots">2 active job slots</div>
+          <p>Best for a small established business that needs consistent design, content, marketing support, basic website or SEO updates, and monthly reporting.</p>
+        </div>
+        <div class="rp-pricing-card rp-pricing-featured rp-fade-in stagger-2">
+          <div class="rp-pricing-badge">Most popular</div>
+          <h3>Momentum</h3>
+          <div class="rp-pricing-points">45 <span>GrowthPoints / month</span></div>
+          <div class="rp-pricing-slots">3 active job slots</div>
+          <p>Best for a business ready to coordinate content, social, email, SEO, landing pages, and campaign optimization.</p>
+        </div>
+        <div class="rp-pricing-card rp-fade-in stagger-3">
+          <h3>Scale Engine</h3>
+          <div class="rp-pricing-points">75 <span>GrowthPoints / month</span></div>
+          <div class="rp-pricing-slots">5 active job slots</div>
+          <p>Best for a business actively scaling campaigns, leads, automation, landing pages, email sequences, SEO content, and conversion.</p>
+        </div>
+        <div class="rp-pricing-card rp-fade-in stagger-4">
+          <h3>Authority</h3>
+          <div class="rp-pricing-points">110 <span>GrowthPoints / month</span></div>
+          <div class="rp-pricing-slots">7 active job slots</div>
+          <p>Best for brands that need deeper strategy, multi-channel execution, authority-building content, AI-assisted workflows, automation, reporting, and optimization.</p>
+        </div>
+      </div>
+      <div class="rp-pricing-cta">
+        <Button variant="secondary" size="lg" href="/growth-points#plans">Compare plans and point values</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="rp-section rp-cta-band">
+    <div class="rp-container">
+      <div class="rp-cta-inner rp-fade-in">
+        <span class="rp-eyebrow" style="--rp-accent: var(--rp-on-accent);">Your best next move</span>
+        <h2>Before we recommend a plan, let's find out what growth actually needs.</h2>
+        <p>Complete the short Growth Application. We'll review your current constraint, urgency, internal capacity, and investment range. If Bow Tie is a fit, you'll be invited to schedule a Growth Allocation Call.</p>
+        <Button variant="primary" size="lg" href="/apply">Start the Growth Application</Button>
+        <p class="rp-cta-note">Approximately 5 minutes · No obligation · Reviewed by a real person</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .rp-hero {
+    padding: var(--space-10) 0 var(--space-9);
+    position: relative;
+    overflow: hidden;
+  }
+  .rp-hero-grid {
+    max-width: 900px;
+  }
+  .rp-hero-text h1 {
+    margin-bottom: var(--space-5);
+  }
+  .rp-hero-sub {
+    font-size: var(--text-body-lg);
+    color: var(--text-muted);
+    margin-bottom: var(--space-6);
+    max-width: 680px;
+  }
+  .rp-hero-actions {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-8);
+  }
+  .rp-hero-stats {
+    display: flex;
+    gap: var(--space-8);
+    flex-wrap: wrap;
+  }
+  .rp-hero-stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .rp-hero-stats strong {
+    font-size: var(--text-h3);
+    color: var(--text-heading);
+    font-weight: var(--weight-semibold);
+    letter-spacing: var(--track-h3);
+  }
+  .rp-hero-stats span {
+    font-size: var(--text-small);
+    color: var(--text-muted);
+  }
+
+  /* Problem section */
+  .rp-problem h2 {
+    max-width: 720px;
+    margin-bottom: var(--space-4);
+  }
+  .rp-problem > p {
+    max-width: 600px;
+    margin-bottom: var(--space-8);
+    color: var(--text-muted);
+  }
+  .rp-constraints {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gutter);
+  }
+  .rp-constraint-card {
+    background: var(--rp-surface);
+    padding: var(--space-6);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--hairline-soft);
+  }
+  .rp-constraint-card h3 {
+    margin-bottom: var(--space-3);
+  }
+  .rp-constraint-card p {
+    color: var(--text-muted);
+    font-size: var(--text-small);
+    margin: 0;
+  }
+
+  /* Solution */
+  .rp-solution h2 {
+    max-width: 720px;
+    margin-bottom: var(--space-4);
+  }
+  .rp-solution p {
+    max-width: 600px;
+    color: var(--text-muted);
+  }
+
+  /* Section title */
+  .rp-section-title {
+    margin-bottom: var(--space-6);
+  }
+
+  /* Steps */
+  .rp-steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gutter);
+    margin-bottom: var(--space-8);
+  }
+  .rp-step {
+    padding: var(--space-6);
+    background: var(--rp-surface);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--hairline-soft);
+  }
+  .rp-step .rp-eyebrow {
+    margin-bottom: var(--space-3);
+  }
+  .rp-step h3 {
+    margin-bottom: var(--space-3);
+  }
+  .rp-step p {
+    color: var(--text-muted);
+    font-size: var(--text-small);
+    margin: 0;
+  }
+  .rp-step-cta {
+    text-align: center;
+  }
+
+  /* Disciplines */
+  .rp-disciplines {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-5);
+    margin-top: var(--space-6);
+  }
+  .rp-discipline {
+    background: var(--rp-surface-2);
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--radius-btn);
+    font-size: var(--text-small);
+    color: var(--text-heading);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    border: 1px solid var(--hairline-soft);
+  }
+  .rp-discipline span {
+    color: var(--rp-accent);
+    font-weight: var(--weight-semibold);
+  }
+
+  /* Table */
+  .rp-table-wrap {
+    overflow-x: auto;
+  }
+  .rp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-small);
+  }
+  .rp-table th, .rp-table td {
+    padding: var(--space-4) var(--space-4);
+    text-align: left;
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+  .rp-table thead th {
+    font-size: var(--text-micro);
+    letter-spacing: var(--track-micro);
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: var(--weight-semibold);
+  }
+  .rp-table thead th:first-child,
+  .rp-table tbody th {
+    color: var(--text-heading);
+    font-weight: var(--weight-semibold);
+    font-size: var(--text-small);
+  }
+  .rp-table-accent {
+    color: var(--rp-accent);
+    font-weight: var(--weight-semibold);
+  }
+  .rp-table tbody tr:last-child td,
+  .rp-table tbody tr:last-child th {
+    border-bottom: none;
+  }
+
+  /* Pricing */
+  .rp-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gutter);
+    margin-bottom: var(--space-8);
+  }
+  .rp-pricing-card {
+    background: var(--rp-surface-2);
+    padding: var(--space-6);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--hairline-soft);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .rp-pricing-featured {
+    border-color: var(--rp-accent);
+    box-shadow: 0 0 0 1px var(--rp-accent);
+  }
+  .rp-pricing-featured .rp-pricing-points {
+    color: var(--rp-accent);
+  }
+  .rp-pricing-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--cta);
+    color: var(--rp-on-accent);
+    font-size: var(--text-micro);
+    letter-spacing: var(--track-micro);
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    font-weight: var(--weight-semibold);
+    white-space: nowrap;
+  }
+  .rp-pricing-card h3 {
+    margin-bottom: var(--space-4);
+  }
+  .rp-pricing-points {
+    font-size: var(--text-h2);
+    font-weight: var(--weight-semibold);
+    color: var(--text-heading);
+    line-height: 1;
+    margin-bottom: var(--space-2);
+  }
+  .rp-pricing-points span {
+    font-size: var(--text-small);
+    color: var(--text-muted);
+    font-weight: var(--weight-regular);
+    display: block;
+    margin-top: 4px;
+  }
+  .rp-pricing-slots {
+    font-size: var(--text-small);
+    color: var(--text-muted);
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-5);
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+  .rp-pricing-card p {
+    color: var(--text-muted);
+    font-size: var(--text-small);
+    margin: 0;
+    flex: 1;
+  }
+  .rp-pricing-cta {
+    text-align: center;
+  }
+
+  /* CTA Band */
+  .rp-cta-band {
+    background: linear-gradient(135deg, var(--rp-accent-press), var(--rp-accent));
+    position: relative;
+  }
+  .rp-cta-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .rp-cta-inner h2 {
+    color: var(--rp-on-accent);
+    margin-bottom: var(--space-4);
+  }
+  .rp-cta-inner p {
+    color: rgba(245, 247, 250, 0.85);
+    margin-bottom: var(--space-6);
+  }
+  .rp-cta-inner .rp-btn--primary {
+    background: var(--rp-on-accent);
+    color: var(--rp-accent-press);
+    border-color: var(--rp-on-accent);
+  }
+  .rp-cta-inner .rp-btn--primary:hover {
+    background: rgba(245, 247, 250, 0.9);
+    color: var(--rp-accent-press);
+  }
+  .rp-cta-note {
+    font-size: var(--text-small);
+    opacity: 0.7;
+    margin-top: var(--space-4);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .rp-constraints { grid-template-columns: 1fr; }
+    .rp-steps { grid-template-columns: 1fr; }
+    .rp-disciplines { grid-template-columns: repeat(2, 1fr); }
+    .rp-pricing-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .rp-disciplines { grid-template-columns: 1fr; }
+    .rp-pricing-grid { grid-template-columns: 1fr; }
+    .rp-hero-stats { flex-direction: column; gap: var(--space-4); }
+  }
+</style>

@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+---
+
+<BaseLayout
+  title="Page not found · Bow Tie Kreative"
+  noindex={true}
+>
+  <section class="rp-section" style="min-height: 60vh; display: flex; align-items: center;">
+    <div class="rp-container" style="text-align: center;">
+      <h1 style="font-size: clamp(96px, 12vw, 160px); color: var(--rp-accent); opacity: 0.3; line-height: 1; margin-bottom: var(--space-4);">404</h1>
+      <h2 style="margin-bottom: var(--space-4);">That tie's not on the rack.</h2>
+      <p style="color: var(--text-muted); max-width: 480px; margin: 0 auto var(--space-6);">
+        The page you're looking for couldn't be found — it may have moved or never existed. Head back home or pick a shortcut below.
+      </p>
+      <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+        <Button variant="primary" size="md" href="/">Go home</Button>
+        <Button variant="secondary" size="md" href="/apply">Apply</Button>
+        <Button variant="secondary" size="md" href="/growth-points">GrowthPoints</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

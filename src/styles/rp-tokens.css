@@ -1,0 +1,128 @@
+/* ============================================================
+   Ryan Perez Design System — Design Tokens
+   bowtiekreative.com reskin
+   Dark canvas, one blue accent, Inter, cinematic motion
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+  /* Base palette — everything blue-shifted, nothing pure black/white */
+  --rp-canvas: #07090D;
+  --rp-surface: #1A1D24;
+  --rp-surface-2: #23262F;
+  --rp-heading: #F5F7FA;
+  --rp-body: #C5C7CE;
+  --rp-muted: #8A8D96;
+  --rp-accent: #3F6EE9;
+  --rp-accent-hover: #5B84EE;
+  --rp-accent-press: #3259C4;
+  --rp-on-accent: #F5F7FA;
+
+  /* Semantic aliases */
+  --bg-page: var(--rp-canvas);
+  --surface-card: var(--rp-surface);
+  --surface-raised: var(--rp-surface-2);
+  --text-heading: var(--rp-heading);
+  --text-body: var(--rp-body);
+  --text-muted: var(--rp-muted);
+  --text-link: var(--rp-accent-hover);
+  --cta: var(--rp-accent);
+
+  /* Depth from light, not shadows */
+  --hairline: rgba(245, 247, 250, 0.15);
+  --hairline-soft: rgba(245, 247, 250, 0.08);
+  --backlight: radial-gradient(60% 50% at 50% 100%, rgba(255,255,255,0.07), transparent 70%);
+  --backlight-top: radial-gradient(60% 50% at 50% 0%, rgba(255,255,255,0.07), transparent 70%);
+  --glass-bg: rgba(7, 9, 13, 0.8);
+  --glass-blur: blur(16px);
+
+  /* Typography — one font, two weights */
+  --font-core: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  --weight-regular: 400;
+  --weight-semibold: 600;
+
+  /* Huge + tight */
+  --text-h1: clamp(48px, 6.5vw, 80px);
+  --track-h1: -0.05em;
+  --leading-h1: 1.02;
+  --text-h2: clamp(36px, 4.5vw, 56px);
+  --track-h2: -0.04em;
+  --leading-h2: 1.08;
+  --text-h3: clamp(24px, 2.5vw, 32px);
+  --track-h3: -0.02em;
+  --leading-h3: 1.2;
+  --text-h4: 22px;
+  --track-h4: -0.01em;
+  --leading-h4: 1.3;
+
+  /* Body */
+  --size-body: 16px;
+  --leading-body: 1.7;
+  --text-body-lg: 18px;
+  --text-small: 14px;
+
+  /* Tiny + wide */
+  --text-micro: 12px;
+  --track-micro: 0.12em;
+
+  /* Layout */
+  --container: 1200px;
+  --grid-cols: 12;
+  --gutter: 32px;
+  --section-gap: 128px;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* Radius language */
+  --radius-btn: 8px;
+  --radius-input: 8px;
+  --radius-card: 16px;
+  --radius-panel: 24px;
+  --radius-media: 32px;
+  --radius-media-lg: 48px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 200ms;
+  --duration-base: 600ms;
+  --duration-slow: 900ms;
+  --stagger: 90ms;
+  --rise: 24px;
+
+  /* Cinema */
+  --media-bleed: 1.08;
+  --ratio-hero: 3/1;
+
+  /* Grade / textures */
+  --grade-filter: saturate(0.85) contrast(0.92);
+  --grade-tint: linear-gradient(rgba(23,32,52,0.25), rgba(23,32,52,0.25));
+  --grain-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  --grain-opacity: 0.06;
+
+  /* Legibility floods */
+  --flood-canvas: linear-gradient(90deg, rgba(7,9,13,0.92) 0%, rgba(7,9,13,0.75) 35%, rgba(7,9,13,0.1) 70%, transparent 100%);
+}
+
+@keyframes rp-fade-up {
+  from { opacity: 0; transform: translateY(var(--rise, 24px)); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

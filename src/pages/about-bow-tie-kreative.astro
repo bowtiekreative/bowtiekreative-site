@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+---
+
+<BaseLayout
+  title="Neurodivergent-Led Agency · Bow Tie Kreative"
+  description="Meet Bow Tie Kreative — a Calgary-based, neurodivergent-led creative agency founded in 2013 by Ryan Perez. Strategy-first websites, funnels & brand systems."
+  canonical="https://bowtiekreative.com/about-bow-tie-kreative"
+>
+  <section class="rp-section rp-backlight">
+    <div class="rp-container">
+      <div class="rp-about-hero rp-fade-in" style="max-width: 720px;">
+        <span class="rp-eyebrow">About</span>
+        <h1>Neurodivergent-Led Agency</h1>
+        <p style="font-size: var(--text-body-lg); color: var(--text-muted);">Bow Tie Kreative is a Calgary-based creative agency founded in 2013 by Ryan Perez. Strategy-first. Results-driven. Different by design.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section">
+    <div class="rp-container">
+      <div class="rp-grid">
+        <div class="rp-about-story" style="grid-column: 1 / 8;">
+          <span class="rp-eyebrow">The story</span>
+          <h2>Built different. On purpose.</h2>
+          <p>Bow Tie Kreative started in 2013 as a web design shop. Over a decade, it evolved into an adaptive growth agency that coordinates strategy, creative, content, SEO, ads, email, automation, and AI under one system.</p>
+          <p>Founder Ryan Perez — autistic, ADHD, dyslexic, diagnosed at 41 — built the agency to do what traditional agency models couldn't: flex with the constraint. The GrowthPoints system is the result. It's not a retainer. It's not a subscription. It's capacity that follows the opportunity.</p>
+          <p>We work with established businesses that need predictable budgets, flexible priorities, and one team that owns the full customer path — not a committee of disconnected vendors.</p>
+        </div>
+        <div style="grid-column: 9 / 13; background: var(--rp-surface); border-radius: var(--radius-card); padding: var(--space-6); border: 1px solid var(--hairline-soft); align-self: start;">
+          <span class="rp-eyebrow">Founded</span>
+          <p style="font-size: var(--text-h3); color: var(--text-heading); font-weight: var(--weight-semibold); margin: 0;">2013</p>
+          <hr class="rp-hairline" style="margin: var(--space-5) 0;" />
+          <span class="rp-eyebrow">Location</span>
+          <p style="color: var(--text-heading);">Calgary, Alberta, Canada</p>
+          <hr class="rp-hairline" style="margin: var(--space-5) 0;" />
+          <span class="rp-eyebrow">Leader</span>
+          <p style="color: var(--text-heading);">Ryan Perez<br /><span style="color: var(--text-muted); font-size: var(--text-small);">Founder & Cognitive Architect</span></p>
+          <hr class="rp-hairline" style="margin: var(--space-5) 0;" />
+          <span class="rp-eyebrow">System</span>
+          <p style="color: var(--text-heading);">GrowthPoints — point-based growth capacity, not hourly billing</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section rp-cta-band">
+    <div class="rp-container">
+      <div class="rp-cta-inner">
+        <h2>Ready to work with an agency that adapts to your business?</h2>
+        <Button variant="primary" size="lg" href="/apply">Start the Growth Application</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .rp-cta-band { background: linear-gradient(135deg, var(--rp-accent-press), var(--rp-accent)); }
+  .rp-cta-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+  .rp-cta-inner h2 { color: var(--rp-on-accent); margin-bottom: var(--space-6); }
+  .rp-cta-inner .rp-btn--primary { background: var(--rp-on-accent); color: var(--rp-accent-press); }
+  .rp-cta-inner .rp-btn--primary:hover { background: rgba(245,247,250,0.9); }
+  @media (max-width: 768px) { .rp-about-story { grid-column: 1 / -1; } }
+</style>

@@ -1,0 +1,116 @@
+/* ============================================================
+   Global Base Styles — Ryan Perez Design System
+   ============================================================ */
+
+@import './rp-tokens.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-core);
+  font-size: var(--size-body);
+  line-height: var(--leading-body);
+  font-weight: var(--weight-regular);
+  color: var(--text-body);
+  background-color: var(--bg-page);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-weight: var(--weight-semibold);
+  color: var(--text-heading);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+h1 { font-size: var(--text-h1); letter-spacing: var(--track-h1); line-height: var(--leading-h1); }
+h2 { font-size: var(--text-h2); letter-spacing: var(--track-h2); line-height: var(--leading-h2); }
+h3 { font-size: var(--text-h3); letter-spacing: var(--track-h3); line-height: var(--leading-h3); }
+h4 { font-size: var(--text-h4); letter-spacing: var(--track-h4); line-height: var(--leading-h4); }
+
+a {
+  color: var(--text-link);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+a:hover { color: var(--rp-accent-hover); }
+
+p { margin-bottom: 1rem; }
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Utility classes */
+.rp-container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.rp-section {
+  padding: var(--section-gap) 0;
+}
+
+.rp-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  gap: var(--gutter);
+}
+
+.rp-fade-in {
+  opacity: 0;
+  transform: translateY(var(--rise, 24px));
+  animation: rp-fade-up var(--duration-base) var(--ease-out) forwards;
+}
+
+/* Backlight section */
+.rp-backlight {
+  position: relative;
+}
+.rp-backlight::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--backlight);
+  pointer-events: none;
+}
+
+/* Hairline separator */
+.rp-hairline {
+  border: none;
+  height: 1px;
+  background: var(--hairline-soft);
+  margin: 0;
+}
+
+/* Eyebrow label */
+.rp-eyebrow {
+  font-size: var(--text-micro);
+  letter-spacing: var(--track-micro);
+  text-transform: uppercase;
+  color: var(--rp-accent);
+  margin-bottom: var(--space-4);
+  display: block;
+}
+
+/* Stagger delay classes */
+.stagger-1 { animation-delay: 90ms; }
+.stagger-2 { animation-delay: 180ms; }
+.stagger-3 { animation-delay: 270ms; }
+.stagger-4 { animation-delay: 360ms; }
+.stagger-5 { animation-delay: 450ms; }
+.stagger-6 { animation-delay: 540ms; }
+.stagger-7 { animation-delay: 630ms; }
+.stagger-8 { animation-delay: 720ms; }

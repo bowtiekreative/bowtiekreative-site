@@ -1,0 +1,129 @@
+---
+// Footer — Ryan Perez Design System
+export interface Props {
+  socials?: Array<{ label: string; href: string }>;
+}
+const { socials = [] } = Astro.props;
+---
+
+<footer class="rp-footer">
+  <div class="rp-container">
+    <div class="rp-footer-grid">
+      <div class="rp-footer-brand">
+        <a href="/" class="rp-footer-logo">Bow Tie Kreative</a>
+        <p class="rp-footer-tagline">The adaptive growth agency.<br />Calgary, est. 2013.</p>
+        <div class="rp-footer-socials">
+          {socials.map(s => (
+            <a href={s.href} class="rp-footer-social" target="_blank" rel="noopener noreferrer">{s.label}</a>
+          ))}
+        </div>
+      </div>
+      <div class="rp-footer-nav">
+        <h4 class="rp-footer-nav-title">Explore</h4>
+        <a href="/">Home</a>
+        <a href="/about-bow-tie-kreative">About</a>
+        <a href="/growth-points">GrowthPoints</a>
+        <a href="/results">Results</a>
+        <a href="/apply">Apply</a>
+        <a href="/support/website">Website Support</a>
+      </div>
+      <div class="rp-footer-nav">
+        <h4 class="rp-footer-nav-title">Policies</h4>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="/cookie-policy">Cookie Policy</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+      <div class="rp-footer-nav">
+        <h4 class="rp-footer-nav-title">Contact</h4>
+        <a href="mailto:hello@bowtiekreative.com">hello@bowtiekreative.com</a>
+        <p class="rp-footer-address">Calgary, Alberta, Canada</p>
+      </div>
+    </div>
+    <hr class="rp-hairline" />
+    <div class="rp-footer-bottom">
+      <p>&copy; {new Date().getFullYear()} Bow Tie Kreative. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .rp-footer {
+    padding: var(--space-9) 0 var(--space-6);
+    border-top: 1px solid var(--hairline-soft);
+    background: var(--rp-surface);
+  }
+  .rp-footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--gutter);
+    margin-bottom: var(--space-8);
+  }
+  .rp-footer-logo {
+    font-weight: var(--weight-semibold);
+    font-size: 20px;
+    color: var(--text-heading);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: var(--space-3);
+  }
+  .rp-footer-tagline {
+    color: var(--text-muted);
+    font-size: var(--text-small);
+    line-height: 1.6;
+    margin-bottom: var(--space-5);
+  }
+  .rp-footer-socials {
+    display: flex;
+    gap: var(--space-3);
+  }
+  .rp-footer-social {
+    font-size: var(--text-small);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+  .rp-footer-social:hover { color: var(--text-link); }
+  .rp-footer-nav-title {
+    font-size: var(--text-micro);
+    letter-spacing: var(--track-micro);
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: var(--space-4);
+    font-weight: var(--weight-semibold);
+  }
+  .rp-footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .rp-footer-nav a {
+    font-size: var(--text-small);
+    color: var(--text-body);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+  .rp-footer-nav a:hover { color: var(--text-link); }
+  .rp-footer-address {
+    font-size: var(--text-small);
+    color: var(--text-muted);
+  }
+  .rp-footer-bottom {
+    padding-top: var(--space-6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+  .rp-footer-bottom p {
+    font-size: var(--text-small);
+    color: var(--text-muted);
+  }
+  @media (max-width: 768px) {
+    .rp-footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .rp-footer-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+---
+
+<BaseLayout
+  title="GrowthPoints · Bow Tie Kreative"
+  description="Bow Tie Kreative's GrowthPoints system — flexible growth capacity without hourly billing. See how our point-based system works."
+  canonical="https://bowtiekreative.com/growth-points"
+>
+  <section class="rp-section rp-backlight">
+    <div class="rp-container">
+      <div class="rp-hero-text rp-fade-in" style="max-width: 720px;">
+        <span class="rp-eyebrow">Growth system</span>
+        <h1>GrowthPoints — flexible growth capacity without hourly billing.</h1>
+        <p style="font-size: var(--text-body-lg); color: var(--text-muted); margin-bottom: var(--space-6);">GrowthPoints convert your monthly investment into visible growth capacity. Use the same points across twelve execution disciplines plus strategy, then reorder the queue as the business learns.</p>
+        <Button variant="primary" size="lg" href="/apply">Apply for a Growth Allocation Call</Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section">
+    <div class="rp-container">
+      <span class="rp-eyebrow">The model</span>
+      <h2>How GrowthPoints work</h2>
+      <p style="max-width: 600px; color: var(--text-muted);">Points represent the value, strategy, complexity, effort, and production capacity associated with a deliverable — not time logged.</p>
+      <div class="rp-constraints" style="margin-top: var(--space-6);">
+        <div class="rp-constraint-card">
+          <h3>Predictable budget</h3>
+          <p>Your monthly investment stays the same. What changes is what we focus on.</p>
+        </div>
+        <div class="rp-constraint-card">
+          <h3>Flexible priorities</h3>
+          <p>Work that hasn't started can be reordered or swapped. Your budget follows the constraint.</p>
+        </div>
+        <div class="rp-constraint-card">
+          <h3>Transparent point values</h3>
+          <p>Every task has a published point cost. You always know what you're funding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section" style="background: var(--rp-surface);" id="plans">
+    <div class="rp-container">
+      <span class="rp-eyebrow">Plans</span>
+      <h2>Compare plans and point values</h2>
+      <div class="rp-pricing-grid" style="margin-top: var(--space-6);">
+        <div class="rp-pricing-card">
+          <h3>Starter Growth</h3>
+          <div class="rp-pricing-points">25 <span>GrowthPoints / month</span></div>
+          <div class="rp-pricing-slots">2 active job slots</div>
+        </div>
+        <div class="rp-pricing-card rp-pricing-featured">
+          <div class="rp-pricing-badge">Most popular</div>
+          <h3>Momentum</h3>
+          <div class="rp-pricing-points">45 <span>GrowthPoints / month</span></div>
+          <div class="rp-pricing-slots">3 active job slots</div>
+        </div>
+        <div class="rp-pricing-card">
+          <h3>Scale Engine</h3>
+          <div class="rp-pricing-points">75 <span>GrowthPoints / month</span></div>
+          <div class="rp-pricing-slots">5 active job slots</div>
+        </div>
+        <div class="rp-pricing-card">
+          <h3>Authority</h3>
+          <div class="rp-pricing-points">110 <span>GrowthPoints / month</span></div>
+          <div class="rp-pricing-slots">7 active job slots</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section">
+    <div class="rp-container">
+      <span class="rp-eyebrow">FAQ</span>
+      <h2>Frequently asked questions</h2>
+      <div class="rp-faq">
+        <div class="rp-faq-item">
+          <h3>Are GrowthPoints the same as hours?</h3>
+          <p>No. Points represent the value, strategy, complexity, effort, and production capacity associated with a deliverable — not time logged.</p>
+        </div>
+        <div class="rp-faq-item">
+          <h3>Can we change priorities?</h3>
+          <p>Yes. Work that has not started can be reordered or swapped. Work already underway has consumed capacity and cannot simply be exchanged.</p>
+        </div>
+        <div class="rp-faq-item">
+          <h3>Do points roll over?</h3>
+          <p>Unused points reset monthly unless rollover is included in writing.</p>
+        </div>
+        <div class="rp-faq-item">
+          <h3>What do active job slots mean?</h3>
+          <p>Points determine how much work is included. Active slots determine how many deliverables can move forward at the same time.</p>
+        </div>
+        <div class="rp-faq-item">
+          <h3>Can we purchase a one-off project?</h3>
+          <p>Yes. One-off blocks range from 10 to 100 points and are suited to quick wins, focused projects, campaigns, sprints, and launches.</p>
+        </div>
+        <div class="rp-faq-item">
+          <h3>Do you guarantee results?</h3>
+          <p>No responsible growth partner can guarantee a specific business outcome. Bow Tie guarantees a transparent process, defined work, clear point values, and honest reporting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section rp-cta-band">
+    <div class="rp-container">
+      <div class="rp-cta-inner">
+        <h2>Ready to put your growth budget where it works hardest?</h2>
+        <Button variant="primary" size="lg" href="/apply">Start the Growth Application</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .rp-constraints { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gutter); }
+  .rp-constraint-card { background: var(--rp-surface); padding: var(--space-6); border-radius: var(--radius-card); border: 1px solid var(--hairline-soft); }
+  .rp-constraint-card p { color: var(--text-muted); font-size: var(--text-small); margin: 0; }
+  .rp-pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gutter); }
+  .rp-pricing-card { background: var(--rp-surface-2); padding: var(--space-6); border-radius: var(--radius-card); border: 1px solid var(--hairline-soft); position: relative; }
+  .rp-pricing-featured { border-color: var(--rp-accent); box-shadow: 0 0 0 1px var(--rp-accent); }
+  .rp-pricing-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--cta); color: var(--rp-on-accent); font-size: var(--text-micro); letter-spacing: var(--track-micro); text-transform: uppercase; padding: 4px 12px; border-radius: var(--radius-pill); font-weight: var(--weight-semibold); white-space: nowrap; }
+  .rp-pricing-card h3 { margin-bottom: var(--space-4); }
+  .rp-pricing-points { font-size: var(--text-h2); font-weight: var(--weight-semibold); color: var(--text-heading); line-height: 1; margin-bottom: var(--space-2); }
+  .rp-pricing-points span { font-size: var(--text-small); color: var(--text-muted); font-weight: var(--weight-regular); display: block; margin-top: 4px; }
+  .rp-pricing-slots { font-size: var(--text-small); color: var(--text-muted); }
+  .rp-faq { display: grid; gap: var(--space-5); max-width: 720px; margin-top: var(--space-6); }
+  .rp-faq-item { padding: var(--space-5); background: var(--rp-surface); border-radius: var(--radius-card); border: 1px solid var(--hairline-soft); }
+  .rp-faq-item h3 { margin-bottom: var(--space-2); cursor: pointer; }
+  .rp-faq-item p { color: var(--text-muted); font-size: var(--text-small); margin: 0; }
+  .rp-cta-band { background: linear-gradient(135deg, var(--rp-accent-press), var(--rp-accent)); position: relative; }
+  .rp-cta-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+  .rp-cta-inner h2 { color: var(--rp-on-accent); margin-bottom: var(--space-6); }
+  .rp-cta-inner .rp-btn--primary { background: var(--rp-on-accent); color: var(--rp-accent-press); }
+  .rp-cta-inner .rp-btn--primary:hover { background: rgba(245,247,250,0.9); }
+  @media (max-width: 900px) { .rp-constraints { grid-template-columns: 1fr; } .rp-pricing-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .rp-pricing-grid { grid-template-columns: 1fr; } }
+</style>

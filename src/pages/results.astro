@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+---
+
+<BaseLayout
+  title="Results · Bow Tie Kreative"
+  description="See client results and reviews from businesses using Bow Tie Kreative's GrowthPoints system."
+  canonical="https://bowtiekreative.com/results"
+>
+  <section class="rp-section rp-backlight">
+    <div class="rp-container">
+      <div style="max-width: 720px;" class="rp-fade-in">
+        <span class="rp-eyebrow">Results</span>
+        <h1>Client results and reviews</h1>
+        <p style="font-size: var(--text-body-lg); color: var(--text-muted);">Hear from the businesses we work with. Every review is attributed and real.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section">
+    <div class="rp-container">
+      <div class="rp-testimonials">
+        <div class="rp-testimonial-card rp-fade-in stagger-1">
+          <blockquote>"Ryan and his team are absolutely amazing! They went above and beyond when creating my new website from scratch. They communicated often, made sure I was updated every step of the way and ensured that I was fully satisfied with every aspect of my website. They are well priced and were always responsive to my questions, ideas and changes. I highly recommend them for any marketing needs."</blockquote>
+          <div class="rp-testimonial-author">
+            <strong>Anatoli Barbu</strong>
+            <span>Verified review</span>
+          </div>
+        </div>
+
+        <div class="rp-testimonial-card rp-fade-in stagger-2">
+          <blockquote>"We wish to continue doing business with Bow Tie Kreative and also recommend others, not to look further for your brand development."</blockquote>
+          <div class="rp-testimonial-author">
+            <strong>Imran Mirza</strong>
+            <span>Verified review</span>
+          </div>
+        </div>
+
+        <div class="rp-testimonial-card rp-fade-in stagger-3">
+          <blockquote>"Bow Tie Kreative has served customers for quite some time now. I've seen the work that Founder Ryan Perez puts into building his clients' websites, logos and deliverables. His work ethic is iron clad, and he researches the best tools to get things done even if it means coding something himself."</blockquote>
+          <div class="rp-testimonial-author">
+            <strong>Anna Rounseville</strong>
+            <span>Verified review</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: var(--space-8); text-align: center;">
+        <Button variant="secondary" size="md" href="/apply">Start your own success story</Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section rp-cta-band">
+    <div class="rp-container">
+      <div class="rp-cta-inner">
+        <h2>Ready to grow?</h2>
+        <Button variant="primary" size="lg" href="/apply">Start the Growth Application</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .rp-testimonials {
+    display: grid;
+    gap: var(--gutter);
+  }
+  .rp-testimonial-card {
+    background: var(--rp-surface);
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--radius-card);
+    padding: var(--space-6);
+  }
+  .rp-testimonial-card blockquote {
+    color: var(--text-body);
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: var(--space-5);
+    font-size: var(--text-body-lg);
+  }
+  .rp-testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+  .rp-testimonial-author strong {
+    color: var(--text-heading);
+    font-weight: var(--weight-semibold);
+  }
+  .rp-testimonial-author span {
+    font-size: var(--text-small);
+    color: var(--rp-accent);
+    padding: 2px 10px;
+    background: var(--rp-surface-2);
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--hairline-soft);
+  }
+  .rp-cta-band { background: linear-gradient(135deg, var(--rp-accent-press), var(--rp-accent)); }
+  .rp-cta-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+  .rp-cta-inner h2 { color: var(--rp-on-accent); margin-bottom: var(--space-6); }
+  .rp-cta-inner .rp-btn--primary { background: var(--rp-on-accent); color: var(--rp-accent-press); }
+  .rp-cta-inner .rp-btn--primary:hover { background: rgba(245,247,250,0.9); }
+</style>

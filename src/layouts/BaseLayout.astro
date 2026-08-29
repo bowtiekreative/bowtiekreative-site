@@ -1,0 +1,200 @@
+---
+// Base Layout — Ryan Perez Design System
+import MegaMenu from '../components/MegaMenu.astro';
+import Footer from '../components/Footer.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogType?: string;
+  ogImage?: string;
+  noindex?: boolean;
+}
+
+const { 
+  title = 'Adaptive Growth Agency · Bow Tie Kreative',
+  description = 'Bow Tie Kreative gives established businesses one flexible point-based system for strategy, creative, funnels, content, automation and AI.',
+  canonical = 'https://bowtiekreative.com',
+  ogType = 'website',
+  ogImage = 'https://bowtiekreative.com/og-image.jpg',
+  noindex = false,
+} = Astro.props;
+
+const currentYear = new Date().getFullYear();
+const ga4Id = 'G-XXXXXXXXXX'; // Replace with actual GA4 ID
+const emailitId = 'nqkjevmvqi'; // Emailit account ID for form processing
+
+const navItems = [
+  {
+    label: 'Services',
+    sections: [
+      {
+        title: 'Disciplines',
+        links: [
+          { label: 'Strategy & Planning', href: '/strategy' },
+          { label: 'Design & Creative', href: '/design' },
+          { label: 'Content Marketing', href: '/content-marketing' },
+          { label: 'SEO', href: '/seo' },
+          { label: 'Paid Ads', href: '/paid-ads' },
+          { label: 'Email Marketing', href: '/email-marketing' },
+          { label: 'Web & Landing Pages', href: '/support/website' },
+          { label: 'AI & Automation', href: '/ai-tasks' },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'GrowthPoints',
+    href: '/growth-points',
+  },
+  {
+    label: 'Results',
+    href: '/results',
+  },
+  {
+    label: 'About',
+    sections: [
+      {
+        title: 'About',
+        links: [
+          { label: 'About Bow Tie Kreative', href: '/about-bow-tie-kreative' },
+          { label: 'Meet Ryan', href: '/about' },
+          { label: 'Process', href: '/process' },
+        ],
+      },
+    ],
+    feature: {
+      kicker: 'Growth System',
+      title: 'See how GrowthPoints work',
+      href: '/growth-points',
+    },
+  },
+  {
+    label: 'Contact',
+    href: '/apply',
+  },
+];
+---
+
+<!doctype html>
+<html lang="en" class="rp-dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <!-- SEO / Geo -->
+  <meta name="geo.region" content="CA-AB" />
+  <meta name="geo.placename" content="Calgary" />
+  <meta name="geo.position" content="51.0447;-114.0719" />
+  <meta name="ICBM" content="51.0447, -114.0719" />
+  <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-image-preview:large'} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:site_name" content="Bow Tie Kreative" />
+  <meta property="og:locale" content="en_CA" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+
+  <!-- JSON-LD Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Bow Tie Kreative",
+    "url": "https://bowtiekreative.com",
+    "logo": "https://bowtiekreative.com/logo.png",
+    "description": "Adaptive growth agency helping established businesses with strategy, creative, funnels, content, automation, and AI.",
+    "foundingDate": "2013",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Calgary",
+      "addressRegion": "AB",
+      "addressCountry": "CA"
+    },
+    "sameAs": [
+      "https://ca.linkedin.com/company/bow-tie-kreative"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD Website Search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Bow Tie Kreative",
+    "url": "https://bowtiekreative.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://bowtiekreative.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Font preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Sitemap -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="/src/styles/global.css" />
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+    body {
+      background: var(--bg-page);
+      color: var(--text-body);
+    }
+  </style>
+</head>
+<body>
+  <MegaMenu
+    brand="Bow Tie Kreative"
+    items={navItems}
+    cta="Start Growth Application"
+    ctaHref="/apply"
+  />
+
+  <main>
+    <slot />
+  </main>
+
+  <Footer
+    socials={[
+      { label: 'LinkedIn', href: 'https://ca.linkedin.com/company/bow-tie-kreative' },
+      { label: 'Email', href: 'mailto:hello@bowtiekreative.com' },
+    ]}
+  />
+
+  <!-- GA4 -->
+  <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{ga4Id}', {
+      page_path: window.location.pathname,
+    });
+  </script>
+
+  <!-- Emailit -->
+  <script type="text/javascript" src={`https://emailit.com/js/${emailitId}`}></script>
+</body>
+</html>

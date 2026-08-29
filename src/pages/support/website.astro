@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/Button.astro';
+---
+
+<BaseLayout
+  title="Website Support · Bow Tie Kreative"
+  description="Bow Tie Kreative builds websites, sales funnels & content systems that turn visitors into customers."
+  canonical="https://bowtiekreative.com/support/website"
+>
+  <section class="rp-section rp-backlight">
+    <div class="rp-container">
+      <div style="max-width: 720px;" class="rp-fade-in">
+        <span class="rp-eyebrow">Services</span>
+        <h1>Website Support</h1>
+        <p style="font-size: var(--text-body-lg); color: var(--text-muted);">Websites, landing pages, sales funnels, and content systems that turn visitors into customers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section">
+    <div class="rp-container">
+      <div class="rp-grid">
+        <div style="grid-column: 1 / 8;">
+          <span class="rp-eyebrow">What we build</span>
+          <h2>Strategy-first websites that work</h2>
+          <p>Every site we build starts with a clear business outcome. We don't design pages — we design customer paths. From discovery through conversion, your website becomes your best salesperson.</p>
+          <p>Our stack includes Astro, WordPress, headless CMS, and modern frameworks — chosen for performance, not fashion.</p>
+        </div>
+        <div style="grid-column: 9 / 13; display: flex; flex-direction: column; gap: var(--space-4);">
+          <div style="background: var(--rp-surface); padding: var(--space-5); border-radius: var(--radius-card); border: 1px solid var(--hairline-soft);">
+            <span class="rp-eyebrow">Includes</span>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-3);">
+              <li style="color: var(--text-body);">→ Strategy & architecture</li>
+              <li style="color: var(--text-body);">→ Design & development</li>
+              <li style="color: var(--text-body);">→ SEO & performance</li>
+              <li style="color: var(--text-body);">→ Analytics & tracking</li>
+              <li style="color: var(--text-body);">→ Ongoing support & updates</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section rp-cta-band">
+    <div class="rp-container">
+      <div class="rp-cta-inner">
+        <h2>Ready for a website that drives growth?</h2>
+        <Button variant="primary" size="lg" href="/apply">Start the Growth Application</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .rp-cta-band { background: linear-gradient(135deg, var(--rp-accent-press), var(--rp-accent)); }
+  .rp-cta-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+  .rp-cta-inner h2 { color: var(--rp-on-accent); margin-bottom: var(--space-6); }
+  .rp-cta-inner .rp-btn--primary { background: var(--rp-on-accent); color: var(--rp-accent-press); }
+  .rp-cta-inner .rp-btn--primary:hover { background: rgba(245,247,250,0.9); }
+  @media (max-width: 768px) { .rp-grid { grid-template-columns: 1fr; } }
+</style>

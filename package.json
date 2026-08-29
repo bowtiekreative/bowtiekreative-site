@@ -1,0 +1,14 @@
+{
+  "name": "bowtiekreative-site",
+  "version": "1.0.0",
+  "description": "Bow Tie Kreative — Adaptive Growth Agency. Ryan Perez Design System reskin.",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^7.2.9"
+  }
+}
